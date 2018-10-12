@@ -184,4 +184,17 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
                 toString(n.getRight());
 
     }
+
+    public boolean iBST(Node n){
+        if(n == null || n.getLeft()== null && n.getRight() == null){
+            return true;
+        }
+        else if(iBST(n.getLeft()) && iBST(n.getRight())&&
+                n.getKey().compareTo(n.getRight())>0 && n.getKey().compareTo(n.getLeft())<0){
+            return true;
+        }
+
+        return false;
+
+    }
 }
